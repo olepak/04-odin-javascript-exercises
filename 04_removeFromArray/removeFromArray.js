@@ -1,9 +1,11 @@
-const removeFromArray = function (array, value1) {
+const removeFromArray = function (array, ...restValue) {
 	let output = array.filter((element) => {
-		return element !== value1;
+		return !restValue.includes(element);
 	});
 	return output;
 };
+
+console.log(removeFromArray([1, 2, 3, 4], 2, 3));
 
 // Do not edit below this line
 module.exports = removeFromArray;
